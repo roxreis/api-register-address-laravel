@@ -14,9 +14,15 @@ class ZipCodeService
         ]);
     }
 
+    public function mascForZipCode($zipcode)
+    {
+        // return masc 00000000
+        return preg_replace("/[^0-9]/", "", $zipcode);
+    }
+
     public function getAddressByZipcode(string $zipcode)
     {
-        $uri = sprintf('%s/json/', $zipcode);
+        $uri = sprintf('%s/json/', $this->mascForZipCode($zipcode));
         $response = $this->client->get($uri);
         return json_decode($response->getBody(), true);
     }
