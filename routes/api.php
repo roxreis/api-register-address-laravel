@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/address/list', [AddressController::class, 'getAddress']);
-Route::post('/address', [AddressController::class, 'postAddress']);
+Route::get('/addresses/list', [AddressController::class, 'getAddresses']);
+Route::get('/address/{id}', [AddressController::class, 'getAddress']);
 Route::get('search/address/{zipCode}', [AddressController::class, 'getAddressByZipcode']);
+Route::post('/address', [AddressController::class, 'postAddress']);
+Route::put('/address/{id}', [AddressController::class, 'putAddress']);
+Route::delete('/address/{id}', [AddressController::class, 'deleteAddress']);
