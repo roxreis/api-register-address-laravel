@@ -23,10 +23,11 @@ class AddressFactory extends Factory
     public function definition()
     {
         return [
-            'zipcode' => $this->faker->randomNumber(8),
+            'zip_code' => $this->faker->randomNumber(8),
             'house_number' => $this->faker->randomNumber(),
             'street' => $this->faker->streetAddress(),
             'complement' => $this->faker->sentence(2),
+            'neighborhood' => $this->faker->sentence(),
             'city' => $this->faker->city(),
             'state' => $this->faker->countryISOAlpha3(),
         ];
