@@ -13,12 +13,13 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->integer('zip_code');
-            $table->integer('number');
-            $table->string('street');
+            $table->integer('house_number');
+            $table->string('street', 3);
             $table->string('complement')->nullable();
+            $table->string('neighborhood');
             $table->string('city');
             $table->string('state');
             $table->timestamps();
