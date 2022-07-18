@@ -75,3 +75,5 @@ Access the project
 
 Api documentation - Swegger
 [https://app.swaggerhub.com/apis/roxreis/register_address/1.0.0](https://app.swaggerhub.com/apis/roxreis/register_address/1.0.0)
+
+*In Insomnia client, was necessary included this param to test PUT and POST routes*![img.png](img.png)
