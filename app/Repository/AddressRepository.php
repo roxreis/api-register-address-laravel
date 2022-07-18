@@ -17,8 +17,19 @@ class AddressRepository
         $this->query = Address::query();
     }
 
-    public function paginate(): LengthAwarePaginator
+    public function findRegisterByParam(string $column, $value): int
     {
+        return DB::table('addresses')->where("$column", $value)->count();
+    }
+
+    public function paginate()
+    {
+        $hasRegister = DB::table('addresses')->get()->count();
+        if ($hasRegister === 0)
+            return response()->json([
+                'message' => 'Not content'
+            ], 204);
+
         return $this->query->paginate(self::PAGINATION_SIZE);
     }
     public function create(array $payload): Address
