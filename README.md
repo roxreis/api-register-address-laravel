@@ -4,7 +4,7 @@
 ### Step by step
 Clone this Repository
 ```sh
-git clone https://github.com/especializati/quick-start-laravel-8-and-adminlte4.git my-project
+git clone https://github.com/roxreis/api-register-address-laravel my-project
 ```
 
 Create the .env file
@@ -60,5 +60,19 @@ php artisan key:generate
 ```
 
 
+Generate migrations
+```sh
+php artisan make:migrate
+```
+
+
+Generate Fake address by factory
+```sh
+php artisan db:seed --class=AddressSeeder
+```
+
 Access the project
 [http://localhost:8080](http://localhost:8080)
+
+Api documentation - Swegger
+[https://app.swaggerhub.com/apis/roxreis/register_address/1.0.0](https://app.swaggerhub.com/apis/roxreis/register_address/1.0.0)
