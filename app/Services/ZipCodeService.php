@@ -14,15 +14,16 @@ class ZipCodeService
         ]);
     }
 
-    public function mascForZipCode($zipcode)
+    public function validateCharacterZipCode($zipcode): bool
     {
-        // return masc 00000000
-        return preg_replace("/[^0-9]/", "", $zipcode);
+        return strlen($zipcode) === 8;
     }
+
 
     public function getAddressByZipcode(string $zipcode)
     {
-        $uri = sprintf('%s/json/', $this->mascForZipCode($zipcode));
+        if (!$this->validateCharacterZipCode($zipcode)) return false;
+        $uri = sprintf('%s/json/', $zipcode);
         $response = $this->client->get($uri);
         return json_decode($response->getBody(), true);
     }
