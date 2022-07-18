@@ -1,5 +1,4 @@
-# Quick Start - Project With Laravel 8.x and AdminLTE 3 (feat. Docker)
-[Cursos de Laravel  - PT-BR](https://academy.especializati.com.br/buscar/laravel)
+# Api Register Address - laravel/docker
 
 ### Step by step
 Clone this Repository
